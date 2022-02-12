@@ -62,8 +62,8 @@ export function create(storage: any): BaseWrappedPath {
         path: "hello"
     } as WrappedPath<Value>;
 };
-```.
-Then it will run the `create` function and returns it. The reason it is slow (2s to compile this) is because every path you want to wrap, it will imports a new script.
+```
+. Then it will run the `create` function and returns it. The reason it is slow (2s to compile this) is because every path you want to wrap, it will imports a new script.
 
 GitHub: [NekoMaru76](https://github.com/NekoMaru76/)<br />
 PayPal: [nekomaru76](https://paypal.me/nekomaru76)
