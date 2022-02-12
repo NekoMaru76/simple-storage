@@ -1,5 +1,5 @@
 # SimpleStorage
-Is a module to create a simple storage with structures. It uses TypeScript to check types at compile-time.
+Is a module to create simple storages with structures in memory. It uses TypeScript to check types at compile-time.
 
 # Example
 ```ts
