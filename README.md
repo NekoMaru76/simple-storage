@@ -3,7 +3,7 @@ Is a module to create a simple storage with structures. It uses TypeScript to ch
 
 # Example
 ```ts
-import { Storage, WrappedPath } from "https://deno.land/x/simple-storage/mod.ts";
+import { Storage, WrappedPath } from "https://deno.land/x/simple_storage/mod.ts";
 
 const storage = new Storage<{
     hello?: {
