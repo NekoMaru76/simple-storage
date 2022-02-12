@@ -35,7 +35,7 @@ export function create(storage: any): BaseWrappedPath {
     type ValueObject = typeof storage.data;
 
     return {
-        /** Sets ${path}'s value */
+        /** Sets hello's value */
 
         set(value: Value): typeof this {
             storage.data.hello = value;
@@ -43,13 +43,13 @@ export function create(storage: any): BaseWrappedPath {
             return this;
         },
 
-        /** Gets ${path}'s value */
+        /** Gets hello's value */
 
         get(defaultValue?: Value): Value {
             return storage.data.hello;
         },
 
-        /** Deletes ${path} */
+        /** Deletes hello */
 
         delete(): typeof this {
             delete storage.data.hello;
