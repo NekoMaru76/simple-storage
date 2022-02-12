@@ -25,5 +25,5 @@ console.log(hello.get()); //undefined
 ```
 (Note: The `WrappedPath` type is unnecessary. `WrappedPath` type is just to make sure readers know what's `Storage.wrap`'s returns value.)
 
-GitHub: [NekoMaru76](https://github.com/NekoMaru76/)
+GitHub: [NekoMaru76](https://github.com/NekoMaru76/)<br />
 PayPal: [nekomaru76](https://paypal.me/nekomaru76)
