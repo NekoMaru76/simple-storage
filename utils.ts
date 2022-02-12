@@ -48,7 +48,11 @@ export function create(storage: any): BaseWrappedPath {
             delete storage.data['${keys.join("']['")}'];
 
             return this;
-        }
+        },
+
+        /** Target path */
+
+        path: "${path}"
     } as WrappedPath<Value>;
 };`;
     const wrappedPath = (await import(`data:application/typescript;charset=utf-8;base64,${btoa(script)}`)).create(storage);

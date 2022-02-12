@@ -25,5 +25,45 @@ console.log(hello.get()); //undefined
 ```
 (Note: The `WrappedPath` type is unnecessary. `WrappedPath` type is just to make sure readers know what's `Storage.wrap`'s returns value.)
 
+# How it Works?
+Basically `Storage.wrap` imports a file with data URL. The data URL contains a script in base64 form. The script example for the `hello` (from example):
+```ts
+import type { WrappedPath, BaseWrappedPath } from "./types.d.ts";
+
+export function create(storage: any): BaseWrappedPath {
+    type Value = typeof storage.data.hello;
+    type ValueObject = typeof storage.data;
+
+    return {
+        /** Sets ${path}'s value */
+
+        set(value: Value): typeof this {
+            storage.data.hello = value;
+
+            return this;
+        },
+
+        /** Gets ${path}'s value */
+
+        get(defaultValue?: Value): Value {
+            return storage.data.hello;
+        },
+
+        /** Deletes ${path} */
+
+        delete(): typeof this {
+            delete storage.data.hello;
+
+            return this;
+        },
+
+        /** Target path */
+
+        path: "hello"
+    } as WrappedPath<Value>;
+};
+```.
+Then it will run the `create` function and returns it. The reason it is slow (2s to compile this) is because every path you want to wrap, it will imports a new script.
+
 GitHub: [NekoMaru76](https://github.com/NekoMaru76/)<br />
 PayPal: [nekomaru76](https://paypal.me/nekomaru76)
